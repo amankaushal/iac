@@ -3,6 +3,7 @@
 
 This is an example of how we can deploy spring boot application in AWS using Terraform, Docker.
 
+
 ### Prerequisites
 
 We need to have below packages installed on our Operating System.
@@ -14,10 +15,12 @@ All the required dependencies can be built into doker image by running the below
 
 ### Deployment
 
-1. git clone git@github.com:amankaushal/iac.git
+1. Clone the repository.
+   ```sh
+   git clone git@github.com:amankaushal/iac.git
+   ```
 
 2. Set the Environment variables.
-   Clone the repo
    ```sh
    export AWS_SECRET_ACCESS_KEY="XXXXX"
    export AWS_ACCESS_KEY_ID="XXXXX"
