@@ -1,0 +1,15 @@
+variable "env_type" {}
+variable "owner" {}
+variable "aws_region_az" {}
+variable "upgrade" {}
+variable "aws_region" {}
+variable "nat_instance" {}
+variable "nat_instance_id" {}
+variable "app_instance" {}
+variable "app_instance_id" {}
+variable "vpc_cidr_block" {}
+variable "vpc_dns_support" {}
+variable "vpc_dns_hostnames" {}
+variable "sbn_public_ip" {}
+variable "sbn_cidr_block" {}
+variable "rt_cidr_block" {}

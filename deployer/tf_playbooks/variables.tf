@@ -1,0 +1,32 @@
+variable "aws_region" {}
+variable "aws_region_az" {}
+variable env_type {}
+variable owner {}
+
+variable app_tag {}
+variable ci_image_tag {}
+variable instance_per_subnet {}
+variable instance_ami {}
+variable nat_instance_ami {}
+variable instance_type {}
+variable key_pair {}
+variable root_device_type {}
+variable root_device_size {}
+variable sg_ingress_proto {}
+variable sg_ingress_ssh {}
+variable sg_ingress_http {}
+variable sg_ingress_app {}
+variable sg_ingress_https {}
+variable sg_ingress_nat_instance {}
+variable sg_ingress_squid {}
+variable sg_egress_proto {}
+variable sg_egress_all {}
+variable sg_egress_cidr_block {}
+
+variable vpc_cidr_block {}
+variable upgrade {}
+variable vpc_dns_support {}
+variable vpc_dns_hostnames {}
+variable sbn_public_ip {}
+variable sbn_cidr_block {}
+variable rt_cidr_block {}
