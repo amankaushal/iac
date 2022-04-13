@@ -1,8 +1,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how we can deploy spring boot application in AWS using Terraform, Docker.
-
+Deploy/Upgrade Spring Boot application in AWS EC2 using Terraform.
 
 ### Prerequisites
 
@@ -11,30 +10,37 @@ We need to have below packages installed on our Operating System.
 * docker
 * git
 
-All the required dependencies can be built into doker image by running the below commands.
-
 ### Deployment
 
-1. Clone the repository.
+1. Create the IAM user account for terraform in AWS and create AWS ACCESS key.
+
+2. Grant EC2 / S3 full access to the terraform user.
+
+3. Clone the repository.
    ```sh
    git clone git@github.com:amankaushal/iac.git
    ```
 
-2. Set the Environment variables.
+4. Set the Environment variables and you can modify configuration in deployer/profiles/${env_type}.tfvars.json
    ```sh
    export AWS_SECRET_ACCESS_KEY="XXXXX"
    export AWS_ACCESS_KEY_ID="XXXXX"
    export AWS_SECRET_KEY="XXXXX"
-   export TF_WORKSPACE="devtest"
-   export ENV_TYPE="dev"
+   export TF_WORKSPACE="devtest" # choose any environment name.
+   export ENV_TYPE="dev" # prod/stg/acc/qa
    ```
 
-3. To build the container.
+5. To build the container.
    ```sh
    ./build.sh
    ```
 
-4. To deploy the infrastructure, run below command.
+6. To deploy the infrastructure, run below command.
    ```sh
    ./run.sh create
+   ```
+
+7. To upgrade the application, run below command after modifying app_tag in environment specific profile files.
+   ```sh
+   ./run.sh upgrade
    ```

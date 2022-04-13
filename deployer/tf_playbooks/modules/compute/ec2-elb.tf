@@ -1,6 +1,6 @@
 resource "aws_elb" "elb" {
   security_groups = [aws_security_group.sg.id]
-  subnets = var.subnet_private.*.id
+  subnets = var.public_subnet.*.id
   health_check {
     healthy_threshold = 2
     unhealthy_threshold = 2
@@ -19,7 +19,7 @@ resource "aws_elb" "elb" {
     "Name"  = "${var.env_type}-${var.owner}-elb"
     "Environment" = "${var.env_type}"
   }
-  instances = "${aws_instance.instance.*.id}"
+  instances = "${aws_instance.app.*.id}"
 }
 
 output "elb_endpoint" {
