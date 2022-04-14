@@ -4,6 +4,7 @@ variable env_type {}
 variable owner {}
 
 variable app_tag {}
+variable domain {}
 variable instance_per_subnet {}
 variable instance_ami {}
 variable instance_type {}

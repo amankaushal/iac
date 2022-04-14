@@ -1,6 +1,7 @@
 variable "env_type" {} 
 variable "owner" {}
 variable "app_tag" {}
+variable "domain" {}
 variable "aws_region_az" {}
 variable "aws_region" {}
 variable "instance_per_subnet" {}

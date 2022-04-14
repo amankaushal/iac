@@ -15,6 +15,7 @@ module "compute" {
   source = "./modules/compute"
   app_tag = var.app_tag
   instance_ami = var.instance_ami
+  domain = var.domain
   instance_type = var.instance_type
   instance_per_subnet = var.instance_per_subnet
   key_pair = var.key_pair

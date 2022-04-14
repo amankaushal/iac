@@ -12,35 +12,39 @@ We need to have below packages installed on our Operating System.
 
 ### Deployment
 
-1. Create the IAM user account for terraform in AWS and create AWS ACCESS key.
+1. Create S3 storage bucket to save the terraform states and change it in provider.tf file.
 
-2. Grant EC2 / S3 full access to the terraform user.
+2. Create IAM Group and grant EC2 / S3 / Route53 full access to the group.
 
-3. Clone the repository.
+3. Create terraform user and make it the member of above group. Create AWS access key and use it in (4).
+
+4. Clone the repository.
    ```sh
    git clone git@github.com:amankaushal/iac.git
    ```
 
-4. Set the Environment variables and you can modify configuration in deployer/profiles/${env_type}.tfvars.json
+5. Set the Environment variables and you can modify configuration in deployer/profiles/${env_type}.tfvars.json
    ```sh
    export AWS_SECRET_ACCESS_KEY="XXXXX"
    export AWS_ACCESS_KEY_ID="XXXXX"
    export AWS_SECRET_KEY="XXXXX"
-   export TF_WORKSPACE="devtest" # choose any environment name.
-   export ENV_TYPE="dev" # prod/stg/acc/qa
+   export TF_WORKSPACE="devtest" # Unique terraform workspace name.
+   export ENV_TYPE="dev" # prod/stg/acc/dev
    ```
 
-5. To build the container.
+6. To build the docker image.
    ```sh
    ./build.sh
    ```
 
-6. To deploy the infrastructure, run below command.
+7. To deploy the infrastructure in AWS, run below command.
    ```sh
    ./run.sh create
    ```
 
-7. To upgrade the application, run below command after modifying app_tag in environment specific profile files.
+8. To upgrade the application, run below command after modifying app_tag in environment specific profile files.
    ```sh
    ./run.sh upgrade
    ```
+
+Note: Configuration variables can be modified in profiles/$env_type files.
