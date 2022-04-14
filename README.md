@@ -16,7 +16,7 @@ We need to have below packages installed on our Operating System.
 
 2. Create IAM Group and grant EC2 / S3 / Route53 full access to the group.
 
-3. Create terraform user and make it the member of above group. Create AWS access key and use it in (4).
+3. Create terraform user and make it the member of above group. Create AWS access key and use it in (5).
 
 4. Clone the repository.
    ```sh
